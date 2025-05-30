@@ -1,0 +1,56 @@
+# Book Review App
+
+## Project Setup
+
+1. **Clone the repository**
+    ```
+    git clone <repository-url>
+    cd Book-review-app
+    ```
+
+2. **Install dependencies**
+    ```
+    npm install
+    ```
+
+3. **Start the development server**
+    ```
+    npm run start
+    ```
+---
+Example API requests (with curl or Postman)
+User Signup--
+curl --location --request PUT 'localhost:4000/api/review/edit/68396720709add107412c7fb' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MmNlYWI2NGY1NDYzZDViMzQ1YyIsImlhdCI6MTc0ODU5MTM0NCwiZXhwIjoxNzQ5MTk2MTQ0fQ.yUTdyZBw0QbWdP3pCWjdGsSSq3DZIf3jQQuptITt6eI' \
+--data '{
+    "comment":"nice"
+}'
+
+Book create--
+curl --location 'localhost:4000/api/book/create' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MmNlYWI2NGY1NDYzZDViMzQ1YyIsImlhdCI6MTc0ODU5MTMxMCwiZXhwIjoxNzQ5MTk2MTEwfQ.MeMzUx4ZKEqSjuxkgLu-lFoLONp-vh3x6Y1zBBTDPUg' \
+--data '{
+  "title": "Gone Girl",
+  "author": "Gillian Flynn",
+  "genre": "Mystery / Thriller",
+  "description": "Gone Girl is a psychological thriller about the disappearance of Amy Dunne and the unraveling of her marriage to Nick Dunne. As the media frenzy intensifies and suspicions mount, secrets are revealed, and the truth about their toxic relationship emerges in unexpected and chilling ways.",
+  "publishYear": 2012,
+  "isbn": "9780307588371"
+}'
+
+fetch all books--
+
+curl --location 'localhost:4000/api/book/allbooks?genre=fantasy' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2MmNlYWI2NGY1NDYzZDViMzQ1YyIsImlhdCI6MTc0ODU5MTM0NCwiZXhwIjoxNzQ5MTk2MTQ0fQ.yUTdyZBw0QbWdP3pCWjdGsSSq3DZIf3jQQuptITt6eI'
+
+
+Review add--
+curl --location 'localhost:4000/api/review/create/683963eb23b8693814619921' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk2ODJjNzA5YWRkMTA3NDEyYzgxMiIsImlhdCI6MTc0ODU5MjY4NCwiZXhwIjoxNzQ5MTk3NDg0fQ.SmZP8WQD0_cRTPojjCI3hy4hhmTRnSsES1KanU3ZDks' \
+--data '{
+    "rating":5,
+    "comment":"excellent"
+}'
